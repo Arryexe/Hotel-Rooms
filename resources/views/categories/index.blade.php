@@ -48,7 +48,17 @@
 		</div>
 
 		<div class="col-4">
-			<a href="" class="btn btn-dark float-right">Back to Room's List</a>
+			<table class="table">
+				<b>Action List</b>
+				<tr>
+					<td>
+						<a href="{{ url('categories/create') }}" class="btn btn-secondary">Create a new Category</a>
+					</td>
+					<td>
+						<a href="" class="btn btn-dark float-right">Back to Room's List</a>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 @endsection 

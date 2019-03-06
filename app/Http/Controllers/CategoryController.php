@@ -17,4 +17,19 @@ class CategoryController extends Controller
     	return view('categories.index', compact('categories'));
     }
 
+    public function create() {
+    	return view('categories.create');
+    }
+
+    public function store(Request $request){
+
+    	$category = new Category;
+
+    	$category->name = $request->get('name');
+    	$category->price = $request->get('price');
+    	$category->save();
+
+    	return redirect('categories');
+    }
+
 }
