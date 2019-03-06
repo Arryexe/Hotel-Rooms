@@ -29,12 +29,18 @@
 								<th>Name</th>
 								<th>Price</th>
 							</tr>
+			
+							@php
+								$no = 1;
+							@endphp
 
-							<tr align="center">
-								<td>1</td>
-								<td>VIP</td>
-								<td>$3,000</td>
-							</tr>
+							@foreach ($categories as $category)
+								<tr align="center">
+									<td>{{ $no++ }}</td>
+									<td>{{ $category->name }}</td>
+									<td>${{ $category->price }}</td>
+								</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>
