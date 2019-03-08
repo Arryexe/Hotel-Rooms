@@ -16,7 +16,7 @@
 							</tr>
 							<tr>
 								<th>Price</th>
-								<td>{{ $categories->price }}</td>
+								<td>${{ $categories->price }}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -24,10 +24,18 @@
 			</div>
 		</div>
 
-		<div class="col-7">
-			<div class="float-right">
-				<a href="{{ url('categories') }}" class="btn btn-dark text-right">Return to Categories Page</a>
-			</div>
+		<div class="col-4">
+			<table class="table">
+				<b>Action List</b>
+				<tr>
+					<td>
+						<a href="{{ url('categories/'. $categories->id .'/edit') }}" class="btn btn-dark text-right">Edit This Category</a>
+					</td>
+					<td>
+						<a href="{{ url('categories') }}" class="btn btn-dark text-right">Return to Categories Page</a>
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 @endsection

@@ -26,3 +26,6 @@ Route::get('categories/create', 'CategoryController@create');
 Route::post('categories', 'CategoryController@store');
 // Details
 Route::get('categories/{id}', 'CategoryController@detail');
+// Details -> Edit
+Route::get('categories/{id}/edit', 'CategoryController@edit');
+Route::patch('categories/{id}', 'CategoryController@update');
