@@ -32,4 +32,11 @@ class CategoryController extends Controller
     	return redirect('categories');
     }
 
+   public function detail($id) {
+
+    	$categories = Category::find($id);
+
+    	return view('categories.detail', compact('categories'));
+    }
+
 }

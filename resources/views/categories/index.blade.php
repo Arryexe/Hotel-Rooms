@@ -28,6 +28,7 @@
 								<th>No.</th>
 								<th>Name</th>
 								<th>Price</th>
+								<th>Action</th>
 							</tr>
 			
 							@php
@@ -39,6 +40,9 @@
 									<td>{{ $no++ }}</td>
 									<td>{{ $category->name }}</td>
 									<td>${{ $category->price }}</td>
+									<td>
+										<a href="{{ url('categories/'. $category->id) }}">View Detail</a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>

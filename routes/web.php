@@ -19,7 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Categories Route
+// Categories Route
 Route::get('categories', 'CategoryController@index');
+// Insert
 Route::get('categories/create', 'CategoryController@create');
 Route::post('categories', 'CategoryController@store');
+// Details
+Route::get('categories/{id}', 'CategoryController@detail');
