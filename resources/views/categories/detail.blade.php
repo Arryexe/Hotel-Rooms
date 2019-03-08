@@ -35,6 +35,14 @@
 						<a href="{{ url('categories') }}" class="btn btn-dark text-right">Return to Categories Page</a>
 					</td>
 				</tr>
+				<tr>
+					<td colspan="2">
+						<form action="{{ url('categories/'. $categories->id) }}" method="post" onsubmit="return confirm('Are you sure to Delete this Employee?')">
+{{ csrf_field() }} {{ method_field('DELETE') }}
+							<button class="btn btn-danger">Delete This Categories</button>
+						</form>
+					</td>
+				</tr>
 			</table>
 		</div>
 	</div>

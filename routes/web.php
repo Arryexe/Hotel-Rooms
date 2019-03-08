@@ -29,3 +29,5 @@ Route::get('categories/{id}', 'CategoryController@detail');
 // Details -> Edit
 Route::get('categories/{id}/edit', 'CategoryController@edit');
 Route::patch('categories/{id}', 'CategoryController@update');
+// Details -> Delete
+Route::delete('categories/{id}', 'CategoryController@destroy');
