@@ -41,6 +41,17 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="col-4">
+			<table class="table">
+				<b>Action List</b>
+				<tr>
+					<td>
+						<a href="{{ url('rooms/create') }}" class="btn btn-secondary">Create a new Room</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
 @endsection

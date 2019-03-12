@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Categories Route
 Route::get('categories', 'CategoryController@index');
-// Insert
+// Create
 Route::get('categories/create', 'CategoryController@create');
 Route::post('categories', 'CategoryController@store');
 // Details
@@ -34,3 +34,6 @@ Route::delete('categories/{id}', 'CategoryController@destroy');
 
 // Rooms Route
 Route::get('rooms', 'RoomController@index');
+// Create
+Route::get('rooms/create', 'RoomController@create');
+Route::post('rooms', 'RoomController@store');

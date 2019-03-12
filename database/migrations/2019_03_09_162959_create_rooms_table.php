@@ -19,10 +19,10 @@ class CreateRoomsTable extends Migration
             $table->bigInteger('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('categories')->ondelete('cascade');
             $table->string('status');
-            $table->string('customer_name');
-            $table->dateTime('checkin_time');
-            $table->dateTime('checkout_time');
-            $table->text('notes');
+            $table->string('customer_name')->nullable();
+            $table->dateTime('checkin_time')->nullable();
+            $table->dateTime('checkout_time')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
