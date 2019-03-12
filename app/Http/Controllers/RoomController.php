@@ -9,12 +9,15 @@ use App\Room;
 class RoomController extends Controller
 {
     
-	public function index() {
+	public function index(Request $request) {
 
-		$category = Category::all();
-		$rooms = Room::all();
+		$search = '%'.$request->get('search').'%';
 
-		return view('rooms.index', compact('category', 'rooms'));
+		$rooms = Room::where('number', 'like', $search)
+		->orWhereHas('category', function ($query) use($search) {$query->where('name', 'like', $search);})
+		->orWhere('status', 'like', $search)->get();
+
+		return view('rooms.index', compact('rooms'));
 	}
 
 }

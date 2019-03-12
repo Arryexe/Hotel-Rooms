@@ -10,7 +10,18 @@
 				</div>
 
 				<div class="card-body">
-					<table class="table">
+					<form action="" method="get">
+						<div class="row">							
+							<div class="col-9">
+								<input type="text" name="search" class="form-control" placeholder="Search for Categories ...">
+							</div>
+							<div class="float-right">
+								<input type="submit" value="Submit" class="btn btn-info text-light">
+								<a href="{{ url('rooms') }}" style="text-decoration: none;" class="btn btn-secondary">Reset</a>
+							</div>						
+						</div>
+					</form>
+					<table class="table my-3">
 						<tbody>
 							<tr align="center">
 								<th>Number</th>
@@ -25,7 +36,7 @@
 									<td>{{ $room->status }}</td>
 								</tr>
 							@endforeach
-						</tbody>
+						</tbody>	
 					</table>
 				</div>
 			</div>
