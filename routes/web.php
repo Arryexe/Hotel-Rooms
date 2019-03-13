@@ -42,3 +42,6 @@ Route::get('rooms/{id}', 'RoomController@detail');
 // Detail -> Edit
 Route::get('rooms/{id}/update', 'RoomController@edit');
 Route::patch('rooms/{id}', 'RoomController@update');
+
+// Detail -> Booking
+Route::post('rooms/{roomId}/booking', 'RoomBookingController@store');

@@ -45,12 +45,13 @@
 					<div class="card-header">Check In or Booking Form</div>
 
 					<div class="card-body">
-						<form action="" method="post">
+						<form action="{{ url('rooms/'.$room->id.'/booking') }}" method="post">
+							{{ csrf_field() }}
 							<table class="table">
 								<tr>
 									<td>
 										<label for="customer_name">Customer Name</label>
-										<input type="text" name="customer_name" id="customer_name" class="form-control">
+										<input type="text" name="customer_name" id="customer_name" class="form-control" required>
 									</td>
 								</tr>
 
@@ -59,14 +60,14 @@
 										<table>
 											<tr>
 												<td>
-													<input type="radio" name="booking" value="Booking" id="booking">
+													<input type="radio" name="status" value="Booking" id="booking">
 													<label for="booking">
 														<p style="font-size: 20px;">Booking</p>
 													</label>
 												</td>
 												<td>
-													<input type="radio" name="checkin" value="Check In">
-													<label>
+													<input type="radio" name="status" value="Check In" id="checkin">
+													<label for="checkin">
 														<p style="font-size: 20px;">Check In</p>
 													</label>
 												</td>

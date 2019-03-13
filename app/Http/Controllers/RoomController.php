@@ -69,8 +69,8 @@ class RoomController extends Controller
 		return view('rooms.update', compact('categories', 'availableNumbers', 'room'));
 	}
 
-	public function update(Request $request) {
-		$room = new Room;
+	public function update(Request $request, $id) {
+		$room = Room::find($id);
 
 		$room->number = $request->get('number');
 		$room->category_id = $request->get('category_name');
