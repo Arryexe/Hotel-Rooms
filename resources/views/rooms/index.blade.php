@@ -27,6 +27,7 @@
 								<th>Number</th>
 								<th>Category</th>
 								<th>Status</th>
+								<th>Action</th>
 							</tr>
 
 							@foreach ($rooms as $room)
@@ -34,6 +35,9 @@
 									<td>{{ $room->number }}</td>
 									<td>{{ $room->category->name }}</td>
 									<td>{{ $room->status }}</td>
+									<td>
+										<a href="{{ url('rooms/'.$room->id) }}">View Detail</a>
+									</td>
 								</tr>
 							@endforeach
 						</tbody>	

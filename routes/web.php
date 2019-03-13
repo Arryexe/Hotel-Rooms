@@ -24,12 +24,12 @@ Route::get('categories', 'CategoryController@index');
 // Create
 Route::get('categories/create', 'CategoryController@create');
 Route::post('categories', 'CategoryController@store');
-// Details
+// Detail
 Route::get('categories/{id}', 'CategoryController@detail');
-// Details -> Edit
+// Detail -> Edit
 Route::get('categories/{id}/edit', 'CategoryController@edit');
 Route::patch('categories/{id}', 'CategoryController@update');
-// Details -> Delete
+// Detail -> Delete
 Route::delete('categories/{id}', 'CategoryController@destroy');
 
 // Rooms Route
@@ -37,3 +37,8 @@ Route::get('rooms', 'RoomController@index');
 // Create
 Route::get('rooms/create', 'RoomController@create');
 Route::post('rooms', 'RoomController@store');
+// Detail
+Route::get('rooms/{id}', 'RoomController@detail');
+// Detail -> Edit
+Route::get('rooms/{id}/update', 'RoomController@edit');
+Route::patch('rooms/{id}', 'RoomController@update');
