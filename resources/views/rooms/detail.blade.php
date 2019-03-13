@@ -30,21 +30,6 @@
 							<th>Status</th>
 							<td>{{ $room->status }}</td>
 						</tr>
-
-						<tr>
-							<th>Check In Time</th>
-							<td>{{ $room->checkin_time ? $room->checkin_time : "There's No Customer In This Room" }}</td>
-						</tr>
-
-						<tr>
-							<th>Check Out Time</th>
-							<td>{{ $room->checkout_time ? $room->checkout_time : "There's No Customer In This Room" }}</td>
-						</tr>
-
-						<tr>
-							<th>Notes</th>
-							<td>{{ $room->notes ? $room->notes : 'No Notes Here' }}</td>
-						</tr>
 					</table>
 				</div>
 
@@ -54,6 +39,35 @@
 				</div>
 			</div>
 		</div>
+
+		@if ($room->status == 'Check In' || $room->status == 'Booking')
+			<div class="col-6">
+				<div class="float-right">
+					<div class="card">
+						<div class="card-header">Room's Status Detail</div>
+
+						<div class="card-body">
+							<table class="table">
+								<tr>
+									<th>Check In Time</th>
+									<td>{{ $room->checkin_time ? $room->checkin_time : "There's No Customer In This Room" }}</td>
+								</tr>
+
+								<tr>
+									<th>Check Out Time</th>
+									<td>{{ $room->checkout_time ? $room->checkout_time : "There's No Customer In This Room" }}</td>
+								</tr>
+
+								<tr>
+									<th>Notes</th>
+									<td>{{ $room->notes ? $room->notes : 'No Notes Here' }}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		@endif
 	</div>
 
 @endsection
