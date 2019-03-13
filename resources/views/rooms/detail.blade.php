@@ -35,35 +35,60 @@
 
 				<div class="card-footer">
 					<a href="{{ url('rooms') }}" class="btn btn-secondary">Back to Room's List</a>
-					<a href="{{ url('rooms/'.$room->id.'/update') }}" class="btn btn-secondary float-right">Edit Data</a>
+					<a href="{{ url('rooms/'.$room->id.'/update') }}" class="btn btn-secondary float-right">Edit Room</a>
 				</div>
 			</div>
 		</div>
-
-		@if ($room->status == 'Check In' || $room->status == 'Booking')
+		@if ($room->status == 'Available')
 			<div class="col-6">
-				<div class="float-right">
-					<div class="card">
-						<div class="card-header">Room's Status Detail</div>
+				<div class="card">
+					<div class="card-header">Check In or Booking Form</div>
 
-						<div class="card-body">
+					<div class="card-body">
+						<form action="" method="post">
 							<table class="table">
 								<tr>
-									<th>Check In Time</th>
-									<td>{{ $room->checkin_time ? $room->checkin_time : "There's No Customer In This Room" }}</td>
+									<td>
+										<label for="customer_name">Customer Name</label>
+										<input type="text" name="customer_name" id="customer_name" class="form-control">
+									</td>
 								</tr>
 
 								<tr>
-									<th>Check Out Time</th>
-									<td>{{ $room->checkout_time ? $room->checkout_time : "There's No Customer In This Room" }}</td>
+									<td>
+										<table>
+											<tr>
+												<td>
+													<input type="radio" name="booking" value="Booking" id="booking">
+													<label for="booking">
+														<p style="font-size: 20px;">Booking</p>
+													</label>
+												</td>
+												<td>
+													<input type="radio" name="checkin" value="Check In">
+													<label>
+														<p style="font-size: 20px;">Check In</p>
+													</label>
+												</td>
+											</tr>
+										</table>
+									</td>
 								</tr>
 
 								<tr>
-									<th>Notes</th>
-									<td>{{ $room->notes ? $room->notes : 'No Notes Here' }}</td>
+									<td>
+										<label for="notes">Notes (Optional)</label>
+										<textarea name="notes" id="notes" class="form-control"></textarea>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<button class="btn btn-secondary float-right">Confirm</button>
+									</td>
 								</tr>
 							</table>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -29,7 +29,6 @@
 							<td>
 								<label for="category_name">Category</label>
 								<select name="category_name" class="form-control" id="category_name" required>
-									{{-- <option label="{{ $room->category->name }}"></option> --}}
 									@foreach ($categories as $category)
 
 										<option value="{{ $category->id }}" {{ $category->id == $room->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
@@ -93,20 +92,6 @@
 							<td>
 								<label for="customer_name">Customer Name</label>
 								<input type="text" name="customer_name" id="customer_name" class="form-control">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<label for="checkin">Check In Time</label>
-								<input type="text" name="check_in" id="checkin" class="form-control">
-							</td>
-						</tr>
-
-						<tr>
-							<td>
-								<label for="checkout">Check Out Time</label>
-								<input type="text" name="check_out" id="checkout" class="form-control">
 							</td>
 						</tr>
 					

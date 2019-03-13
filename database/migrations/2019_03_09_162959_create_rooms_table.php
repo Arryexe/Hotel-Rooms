@@ -22,6 +22,7 @@ class CreateRoomsTable extends Migration
             $table->string('customer_name')->nullable();
             $table->dateTime('checkin_time')->nullable();
             $table->dateTime('checkout_time')->nullable();
+            $table->dateTime('booking_time')->nullable();
             $table->text('notes')->nullable();
             $table->timestamps();
         });
