@@ -50,3 +50,5 @@ Route::post('rooms/{roomId}/checkin', 'RoomStatusController@checkin');
 Route::post('rooms/{roomId}/checkout', 'RoomStatusController@checkout');
 Route::post('rooms/{roomId}/available', 'RoomStatusController@available');
 Route::post('rooms/{roomId}/onservice', 'RoomStatusController@onservice');
+// Detail -> Delete
+Route::delete('rooms/{id}', 'RoomController@destroy');

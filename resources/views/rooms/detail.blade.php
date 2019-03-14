@@ -6,7 +6,18 @@
 		<div class="col-6">
 			<div class="card">
 				<div class="card-header">
-					Room Detail Number <b>{{ $room->number }}</b>
+					<div class="row">
+						<div class="col-6">
+							Room Detail Number <b>{{ $room->number }}</b>
+						</div>
+						
+						<div class="col-6">
+							<form action="{{ url('rooms/'.$room->id) }}" method="post">
+								{{ csrf_field() }} {{ method_field('DELETE') }}
+								<button class="btn btn-secondary float-right">Delete This Room</button>
+							</form>
+						</div>
+					</div>
 				</div>
 
 				<div class="card-body">

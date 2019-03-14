@@ -84,6 +84,12 @@ class RoomController extends Controller
 		return redirect('rooms/'. $room->id);
 	}
 
+	public function destroy($id) {
+		$room = Room::find($id)->delete();
+
+		return redirect('rooms');
+	}
+
 	public function unavailable(Request $request, $roomId) {
 		$room = Room::find($roomId);
 
