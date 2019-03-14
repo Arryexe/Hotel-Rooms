@@ -12,7 +12,9 @@ class CategoryController extends Controller
     	$keyword = '%'.$request->get('search').'%';
 
     	$categories = Category::where('name', 'like', $keyword)
-    	->orWhere('price', 'like', $keyword)->get();
+    	->orWhere('price', 'like', $keyword)
+        ->withCount('room')
+        ->get();
 
     	return view('categories.index', compact('categories'));
     }
