@@ -39,6 +39,38 @@
 				</div>
 			</div>
 		</div>
+		
+		@if ($room->status == 'Booking')
+			<div class="col-6">
+				<div class="card">
+					<div class="card-header">Room's Status</div>
+
+					<div class="card-body">
+						<table class="table">
+							<tr>
+								<th>Booking Time's</th>
+								<td>{{ $room->booking_time }}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		@elseif($room->status == 'Check In')
+			<div class="col-6">
+				<div class="card">
+					<div class="card-header">Room's Status</div>
+
+					<div class="card-body">
+						<table class="table">
+							<tr>
+								<th>Check In Time's</th>
+								<td>{{ $room->checkin_time }}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		@endif
 
 		@if ($room->status == 'Available')
 			<div class="col-6">
@@ -98,10 +130,36 @@
 						<div class="card-header">
 							<form action="{{ url('rooms/'.$room->id.'/unavailable') }}" method="post">
 								{{ csrf_field() }}
-								<button class="btn btn-secondary" value="Not Available" name="status_unavailable">Make This Room Unavailable</button>
-								<div class="alert float-left" style="margin-bottom: -20px;">Note : This button make this room on Unavailable Status</div>
+								<div class="row">
+									<div class="col-6">
+										<button class="btn btn-secondary" value="Not Available" name="status">Make This Room Unavailable</button>
+									</div>
+									<div class="col-6">
+										<div style="font-size: 9pt;">Note : This Button Make this room Not Available</div>
+									</div>
+								</div>
 							</form>
 						</div>
+					</div>
+				</div>
+			</div>
+
+		@elseif($room->status == 'Booking')
+			<div class="col-6">
+				<div class="card my-3">
+					<div class="card-body">
+						<form action="{{ url('rooms/'.$room->id.'/checkin') }}" method="post">
+							{{ csrf_field() }}
+							<div class="row">
+								<div class="col-6">
+									<button class="btn btn-secondary" value="Check In" name="status">Check In Now !</button>
+								</div>
+								
+								<div class="col-6">
+									<div style="font-size: 9pt;">Note : Check In Time will count after you click this Button</div>
+								</div>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
