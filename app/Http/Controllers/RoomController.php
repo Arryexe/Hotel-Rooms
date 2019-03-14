@@ -83,4 +83,13 @@ class RoomController extends Controller
 
 		return redirect('rooms/'. $room->id);
 	}
+
+	public function unavailable(Request $request, $roomId) {
+		$room = Room::find($roomId);
+
+		$room->status = $request->get('status_unavailable');
+		$room->save();
+
+		return redirect('rooms/'.$room->id);
+	}
 }

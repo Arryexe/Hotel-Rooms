@@ -39,6 +39,7 @@
 				</div>
 			</div>
 		</div>
+
 		@if ($room->status == 'Available')
 			<div class="col-6">
 				<div class="card">
@@ -60,16 +61,13 @@
 										<table>
 											<tr>
 												<td>
-													<input type="radio" name="status" value="Booking" id="booking">
-													<label for="booking">
-														<p style="font-size: 20px;">Booking</p>
-													</label>
-												</td>
-												<td>
-													<input type="radio" name="status" value="Check In" id="checkin">
-													<label for="checkin">
-														<p style="font-size: 20px;">Check In</p>
-													</label>
+													<label for="status"><b>Status</b></label>
+													<select name="status" id="status" class="form-control" required>
+														<option label="-- Select Status --"></option>
+
+														<option value="Booking">Booking</option>
+														<option value="Check In">Check In</option>
+													</select>
 												</td>
 											</tr>
 										</table>
@@ -90,6 +88,20 @@
 								</tr>
 							</table>
 						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6">
+				<div style="margin-top: -100px;">
+					<div class="card">
+						<div class="card-header">
+							<form action="{{ url('rooms/'.$room->id.'/unavailable') }}" method="post">
+								{{ csrf_field() }}
+								<button class="btn btn-secondary" value="Not Available" name="status_unavailable">Make This Room Unavailable</button>
+								<div class="alert float-left" style="margin-bottom: -20px;">Note : This button make this room on Unavailable Status</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
