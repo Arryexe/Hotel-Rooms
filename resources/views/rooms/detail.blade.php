@@ -157,7 +157,7 @@
 								{{ csrf_field() }}
 								<div class="row">
 									<div class="col-6">
-										<button class="btn btn-secondary" value="Not Available" name="status">Make This Room Unavailable</button>
+										<button class="btn btn-secondary" value="Not Available" name="status">Make This Room Not Available</button>
 									</div>
 									<div class="col-6">
 										<div style="font-size: 9pt;">Note : This Button Make this room Not Available</div>
@@ -248,6 +248,21 @@
 									<button class="btn btn-secondary" value="On Service" name="status">Make This Room Not Available</button>
 								</div>
 							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		@elseif($room->status == 'Not Available')
+			<div class="col-6">
+				<div class="card my-3">
+					<div class="card-body">
+						<div class="row">
+							<form action="{{ url('rooms/'.$room->id.'/available') }}" method="post">
+								{{ csrf_field() }}
+								<div class="col-6">
+									<button class="btn btn-secondary" value="Available" name="status">Make This Room Available</button>
+								</div>
+							</form>							
 						</div>
 					</div>
 				</div>
