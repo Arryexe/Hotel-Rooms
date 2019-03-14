@@ -40,4 +40,14 @@ class RoomStatusController extends Controller
 
     	return redirect('rooms/'.$room->id);
     }
+
+    public function checkout(Request $request, $roomId) {
+    	$room = Room::find($roomId);
+
+    	$room->status = $request->get('status');
+    	$room->checkout_time = date('Y-m-d H:i:s');
+    	$room->save();
+
+    	return redirect('rooms/'.$room->id);
+    }
 }

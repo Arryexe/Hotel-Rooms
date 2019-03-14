@@ -43,7 +43,8 @@ Route::get('rooms/{id}', 'RoomController@detail');
 Route::get('rooms/{id}/update', 'RoomController@edit');
 Route::patch('rooms/{id}', 'RoomController@update');
 
-// Detail -> Booking,Checkin, and Unavailable
+// Detail -> Status
 Route::post('rooms/{roomId}/booking', 'RoomStatusController@store');
 Route::post('rooms/{roomId}/unavailable', 'RoomController@unavailable');
 Route::post('rooms/{roomId}/checkin', 'RoomStatusController@checkin');
+Route::post('rooms/{roomId}/checkout', 'RoomStatusController@checkout');

@@ -43,12 +43,12 @@
 		@if ($room->status == 'Booking')
 			<div class="col-6">
 				<div class="card">
-					<div class="card-header">Room's Status</div>
+					<div class="card-header">Room Status</div>
 
 					<div class="card-body">
 						<table class="table">
 							<tr>
-								<th>Booking Time's</th>
+								<th>Booking Time</th>
 								<td>{{ $room->booking_time }}</td>
 							</tr>
 						</table>
@@ -63,8 +63,28 @@
 					<div class="card-body">
 						<table class="table">
 							<tr>
-								<th>Check In Time's</th>
+								<th>Check In Time</th>
 								<td>{{ $room->checkin_time }}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		@elseif($room->status == 'Check Out')
+			<div class="col-6">
+				<div class="card">
+					<div class="card-header">Room Status</div>
+
+					<div class="card-body">
+						<table class="table">
+							<tr>
+								<th>Check In Time</th>
+								<td>{{ $room->checkin_time }}</td>
+							</tr>
+
+							<tr>
+								<th>Check Out Time</th>
+								<td>{{ $room->checkout_time }}</td>
 							</tr>
 						</table>
 					</div>
@@ -161,6 +181,26 @@
 							</div>
 						</form>
 					</div>
+				</div>
+			</div>
+
+		@elseif($room->status == 'Check In')
+			<div class="col-6">
+				<div class="card my-3">
+					<card class="card-body">
+						<form action="{{ url('rooms/'.$room->id.'/checkout') }}" method="post">
+							{{ csrf_field() }}
+							<div class="row">
+								<div class="col-6">
+									<button class="btn btn-secondary" value="Check Out" name="status">Check Out Now !</button>
+								</div>
+
+								<div class="col-6">
+									<div style="font-size: 9pt;">Note : Check Out Time Will count after you click this button</div>
+								</div>
+							</div>
+						</form>
+					</card>
 				</div>
 			</div>
 		@endif
