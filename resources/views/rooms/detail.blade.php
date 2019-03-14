@@ -30,6 +30,11 @@
 							<th>Status</th>
 							<td>{{ $room->status }}</td>
 						</tr>
+
+						<tr>
+							<th>Notes</th>
+							<td>{{ $room->notes ? $room->notes : 'There is No Notes Here' }}</td>
+						</tr>
 					</table>
 				</div>
 
@@ -145,7 +150,7 @@
 			</div>
 
 			<div class="col-6">
-				<div style="margin-top: -100px;">
+				<div style="margin-top: -65px;">
 					<div class="card">
 						<div class="card-header">
 							<form action="{{ url('rooms/'.$room->id.'/unavailable') }}" method="post">
@@ -201,6 +206,28 @@
 							</div>
 						</form>
 					</card>
+				</div>
+			</div>
+		@elseif($room->status == 'Check Out')
+			<div class="col-6">
+				<div class="card my-3">
+					<div class="card-body">
+						<div class="row">
+							<form action="{{ url('rooms/'.$room->id.'/available') }}" method="post">
+								{{ csrf_field() }}
+								<div class="col-6">
+									<button class="btn btn-secondary" value="Available" name="status">Make This Room Available</button>
+								</div>
+							</form>
+
+							<form action="{{ url('rooms/'.$room->id.'/onservice') }}" method="post">
+								{{ csrf_field() }}
+								<div class="col-6">
+									<button class="btn btn-secondary" value="On Service" name="status">On Service</button>
+								</div>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 		@endif

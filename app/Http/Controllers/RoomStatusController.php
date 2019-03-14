@@ -50,4 +50,30 @@ class RoomStatusController extends Controller
 
     	return redirect('rooms/'.$room->id);
     }
+
+    public function available(Request $request, $roomId) {
+		$room = Room::find($roomId);
+
+		$room->status = $request->get('status');
+		$room->customer_name = null;
+		$room->checkin_time = null;
+		$room->checkout_time = null;
+		$room->booking_time = null;
+		$room->notes = null;
+		$room->save();
+
+		return redirect('rooms/'.$room->id);
+	}
+
+	public function onservice(Request $request, $roomId) {
+		$room = Room::find($roomId);
+
+		$room->status = $request->get('status');
+		$room->checkin_time = null;
+		$room->checkout_time = null;
+		$room->booking_time = null;
+		$room->save();
+
+		return redirect('rooms/'.$room->id);
+	}
 }
