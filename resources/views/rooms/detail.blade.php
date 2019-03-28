@@ -14,7 +14,7 @@
 						<div class="col-6">
 							<form action="{{ url('rooms/'.$room->id) }}" method="post">
 								{{ csrf_field() }} {{ method_field('DELETE') }}
-								<button class="btn btn-secondary float-right">Delete This Room</button>
+								<button class="btn btn-secondary float-right" id="delete_room_{{ $room->id }}">Delete This Room</button>
 							</form>
 						</div>
 					</div>
@@ -51,7 +51,7 @@
 
 				<div class="card-footer">
 					<a href="{{ url('rooms') }}" class="btn btn-secondary">Back to Room's List</a>
-					<a href="{{ url('rooms/'.$room->id.'/update') }}" class="btn btn-secondary float-right">Edit Room</a>
+					<a href="{{ url('rooms/'.$room->id.'/update') }}" class="btn btn-secondary float-right" id="room_update_{{ $room->id }}">Edit Room</a>
 				</div>
 			</div>
 		</div>

@@ -36,7 +36,7 @@
 									<td>{{ $room->category->name }}</td>
 									<td>{{ $room->status }}</td>
 									<td>
-										<a href="{{ url('rooms/'.$room->id) }}">View Detail</a>
+										<a href="{{ url('rooms/'.$room->id) }}" id="room_view_{{ $room->id }}">View Detail</a>
 									</td>
 								</tr>
 							@endforeach

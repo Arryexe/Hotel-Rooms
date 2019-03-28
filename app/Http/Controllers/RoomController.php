@@ -74,7 +74,7 @@ class RoomController extends Controller
 
 		$room->number = $request->get('number');
 		$room->category_id = $request->get('category_name');
-		$room->status = $request->get('status');
+		$room->status = $room->status;
 		$room->customer_name = $request->get('customer_name');
 		$room->checkin_time = $request->get('check_in');
 		$room->checkout_time = $request->get('check_out');

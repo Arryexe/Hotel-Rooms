@@ -9,7 +9,7 @@
 					Update Data Room Number <b></b>
 
 				</div>
-			<form action="{{ url('rooms/'.$room->id) }}" method="post">
+			<form action="{{ url('rooms/'.$room->id) }}" method="post" id="edit_room_{{ $room->id }}">
 			{{ csrf_field() }} {{ method_field('PATCH') }}
 				<div class="card-body">
 					<table class="table">
@@ -46,7 +46,7 @@
 				</div>
 
 				<div class="card-footer">
-					<button class="btn btn-info text-light">Submit</button>
+					<button class="btn btn-info text-light" id="Update Room">Submit</button>
 					<a href="{{ url('rooms/'.$room->id) }}" class="btn btn-secondary float-right">Back</a>
 				</div>
 			<form>

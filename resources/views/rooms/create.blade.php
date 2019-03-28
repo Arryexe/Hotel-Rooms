@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="card-footer">
-					<button type="submit" value="submit" class="btn btn-info text-light">Submit</button>
+					<button type="submit" value="submit" class="btn btn-info text-light" id="Create Room">Submit</button>
 					<a href="{{ url('rooms') }}" class="btn btn-secondary float-right">Back</a>
 				</div>
 			</div>
