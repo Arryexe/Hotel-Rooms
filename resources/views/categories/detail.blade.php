@@ -52,7 +52,7 @@
 				<b>Action List</b>
 				<tr>
 					<td>
-						<a href="{{ url('categories/'. $categories->id .'/edit') }}" class="btn btn-dark text-right">Edit This Category</a>
+						<a href="{{ url('categories/'. $categories->id .'/edit') }}" class="btn btn-dark text-right" id="edit_category_{{ $categories->id }}">Edit This Category</a>
 					</td>
 					<td>
 						<a href="{{ url('categories') }}" class="btn btn-dark text-right">Return to Categories Page</a>
@@ -63,7 +63,7 @@
 						@if ($categories->room->count() == 0)
 							<form action="{{ url('categories/'. $categories->id) }}" method="post" onsubmit="return confirm('Are you sure to Delete this Employee?')">
 								{{ csrf_field() }} {{ method_field('DELETE') }}
-								<button class="btn btn-danger">Delete This Categories</button>
+								<button class="btn btn-danger" id="delete_category_{{ $categories->id }}">Delete This Categories</button>
 							</form>
 						@endif
 					</td>

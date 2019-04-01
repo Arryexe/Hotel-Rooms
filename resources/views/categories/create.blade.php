@@ -23,7 +23,7 @@
 					</div>
 
 					<div class="card-footer">
-						<button type="submit" value="submit" class="btn btn-info text-light">Submit</button>
+						<button type="submit" value="submit" class="btn btn-info text-light" id="Create Category">Submit</button>
 						<a href="{{ url('categories') }}" class="float-right btn btn-danger">Back to Categories List</a>
 					</div>
 				</form>

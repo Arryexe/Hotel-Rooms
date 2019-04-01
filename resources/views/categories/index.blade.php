@@ -41,7 +41,7 @@
 									<td>{{ $category->name }}</td>
 									<td>${{ $category->price }}</td>
 									<td>
-										<a href="{{ url('categories/'. $category->id) }}">View Detail</a>
+										<a href="{{ url('categories/'. $category->id) }}" id="edit_category_{{ $category->id }}">View Detail</a>
 									</td>
 								</tr>
 							@endforeach
@@ -56,7 +56,7 @@
 				<b>Action List</b>
 				<tr>
 					<td>
-						<a href="{{ url('categories/create') }}" class="btn btn-secondary">Create a new Category</a>
+						<a href="{{ url('categories/create') }}" class="btn btn-secondary" id="create_new_category">Create a new Category</a>
 					</td>
 					<td>
 						<a href="" class="btn btn-dark float-right">Back to Room's List</a>

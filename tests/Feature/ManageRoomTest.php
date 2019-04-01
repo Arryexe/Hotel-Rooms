@@ -15,10 +15,7 @@ class ManageRoomTest extends TestCase
     /** @test */
     public function user_can_make_a_new_room()
     {
-        $category = new Category;
-        $category->name = 'VIP';
-        $category->price = 3000;
-        $category->save();
+        $category = factory(Category::class)->create();
 
         $this->visit('/rooms/create');
 

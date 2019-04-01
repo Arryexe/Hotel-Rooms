@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-header">Create New Category</div>
 
-				<form action="{{ url('categories/'. $categories->id ) }}" method="post">
+				<form action="{{ url('categories/'. $categories->id ) }}" method="post" id="edit_category_{{ $categories->id }}">
 {{ csrf_field() }} {{ method_field('PATCH') }}
 					<div class="card-body">
 						<div class="form-grup">
@@ -23,7 +23,7 @@
 					</div>
 
 					<div class="card-footer">
-						<button type="submit" value="submit" class="btn btn-info text-light">Submit</button>
+						<button type="submit" value="submit" class="btn btn-info text-light" id="Edit Category">Submit</button>
 						<a href="{{ url('categories/'. $categories->id) }}" class="float-right btn btn-danger">Back to Categories Detail</a>
 					</div>
 				</form>
