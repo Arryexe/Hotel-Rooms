@@ -69,6 +69,7 @@ class RoomStatusController extends Controller
 		$room = Room::find($roomId);
 
 		$room->status = $request->get('status');
+		$room->customer_name = null;
 		$room->checkin_time = null;
 		$room->checkout_time = null;
 		$room->booking_time = null;

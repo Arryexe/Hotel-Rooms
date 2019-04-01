@@ -151,7 +151,7 @@
 
 								<tr>
 									<td>
-										<button class="btn btn-secondary float-right">Confirm</button>
+										<button class="btn btn-secondary float-right" id="Submit Room">Confirm</button>
 									</td>
 								</tr>
 							</table>
@@ -168,7 +168,7 @@
 								{{ csrf_field() }}
 								<div class="row">
 									<div class="col-6">
-										<button class="btn btn-secondary" value="Not Available" name="status">Make This Room Not Available</button>
+										<button class="btn btn-secondary" value="Not Available" name="status" id="make_room_not_available_from_available_page">Make This Room Not Available</button>
 									</div>
 									<div class="col-6">
 										<div style="font-size: 9pt;">Note : This Button Make this room Not Available</div>
@@ -188,7 +188,7 @@
 							{{ csrf_field() }}
 							<div class="row">
 								<div class="col-6">
-									<button class="btn btn-secondary" value="Check In" name="status">Check In Now !</button>
+									<button class="btn btn-secondary" value="Check In" name="status" id="checkin">Check In Now !</button>
 								</div>
 								
 								<div class="col-6">
@@ -208,7 +208,7 @@
 							{{ csrf_field() }}
 							<div class="row">
 								<div class="col-6">
-									<button class="btn btn-secondary" value="Check Out" name="status">Check Out Now !</button>
+									<button class="btn btn-secondary" value="Check Out" name="status" id="checkout">Check Out Now !</button>
 								</div>
 
 								<div class="col-6">
@@ -227,14 +227,14 @@
 							<form action="{{ url('rooms/'.$room->id.'/available') }}" method="post">
 								{{ csrf_field() }}
 								<div class="col-6">
-									<button class="btn btn-secondary" value="Available" name="status">Make This Room Available</button>
+									<button class="btn btn-secondary" value="Available" name="status" id="make_available">Make This Room Available</button>
 								</div>
 							</form>
 
 							<form action="{{ url('rooms/'.$room->id.'/onservice') }}" method="post">
 								{{ csrf_field() }}
 								<div class="col-6">
-									<button class="btn btn-secondary" value="On Service" name="status">On Service</button>
+									<button class="btn btn-secondary" value="On Service" name="status" id="make_onservice">On Service</button>
 								</div>
 							</form>
 						</div>
@@ -249,14 +249,14 @@
 							<form action="{{ url('rooms/'.$room->id.'/available') }}" method="post">
 								{{ csrf_field() }}
 								<div class="col-6">
-									<button class="btn btn-secondary" value="Available" name="status">Make This Room Available</button>
+									<button class="btn btn-secondary" value="Available" name="status" id="make_available_from_onservice">Make This Room Available</button>
 								</div>
 							</form>
 
 							<form action="{{ url('rooms/'.$room->id.'/unavailable') }}" method="post">
 								{{ csrf_field() }}
 								<div class="col-6">
-									<button class="btn btn-secondary" value="On Service" name="status">Make This Room Not Available</button>
+									<button class="btn btn-secondary" value="Not Available" name="status" id="make_unavailable_from_onservice">Make This Room Not Available</button>
 								</div>
 							</form>
 						</div>
@@ -271,7 +271,7 @@
 							<form action="{{ url('rooms/'.$room->id.'/available') }}" method="post">
 								{{ csrf_field() }}
 								<div class="col-6">
-									<button class="btn btn-secondary" value="Available" name="status">Make This Room Available</button>
+									<button class="btn btn-secondary" value="Available" name="status" id="make_room_available_from_notavailable">Make This Room Available</button>
 								</div>
 							</form>							
 						</div>
